@@ -16,6 +16,9 @@ install_fedora_packages() {
 
 # Function to install Zsh and Oh My Zsh
 install_zsh() {
+    # Clean any existing installation
+    rm -rf ~/.oh-my-zsh
+
     # Install Oh My Zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -29,6 +32,11 @@ install_zsh() {
 # Function to install plugins
 install_plugins() {
     ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+
+    # Clean any existing plugins
+    rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    rm -rf $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    rm -rf $ZSH_CUSTOM/plugins/z
 
     # Install zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions

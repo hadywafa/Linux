@@ -3,15 +3,15 @@
 # Function to install necessary packages for Debian-based systems
 install_debian_packages() {
     echo "Detected Debian-based system"
-    sudo apt update
-    sudo apt install -y zsh curl git net-tools iputils-ping
+    apt update
+    apt install -y zsh curl git net-tools iputils-ping
 }
 
 # Function to install necessary packages for Fedora-based systems
 install_fedora_packages() {
     echo "Detected Fedora-based system"
-    sudo dnf update -y
-    sudo dnf install -y zsh curl git net-tools iputils
+    dnf update -y
+    dnf install -y zsh curl git net-tools iputils
 }
 
 # Function to install Zsh and Oh My Zsh

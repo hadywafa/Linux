@@ -1,0 +1,7 @@
+sudo apt install net-tools
+sudo apt install iputils-ping
+sudo apt install git
+chmod +x ./install.sh
+
+
+chsh -s $(which zsh)
